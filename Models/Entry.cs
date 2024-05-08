@@ -11,7 +11,7 @@
 
         public enum EntryType
         {
-            Perks, Survivor, Killer, Icon
+            Perks, Survivor, Killer, AddOns
         }
         public int Id { get; set; }
         public Guid Guid { get; set; }

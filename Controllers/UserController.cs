@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using perkamker_backend.Dtos;
 using perkmaker_backend.Dtos;
 using perkmaker_backend.Models;
 using System.Security.Claims;
@@ -67,11 +66,18 @@ namespace perkmaker_backend.Controllers
                 return Ok(await _db.Users.FirstOrDefaultAsync(a => a.Username == HttpContext.User.Identity!.Name));
         }
 
-        [HttpGet("all")]
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             return Ok(await _db.Users.ToListAsync());
         }
 
+        [HttpGet("{username}")]
+        public async Task<IActionResult> GetByUsername(string username)
+        {
+            var user = await _db.Users.FirstOrDefaultAsync(a => a.Username == username);
+            if (user is null) return NotFound();
+            return Ok(user);
+        }
     }
 }
