@@ -2,5 +2,5 @@
 
 namespace perkmaker_backend.Dtos
 {
-    public record PerkCreateDto (string Header, List<Perk> Perks);
+    public record EntryDto(string Header, Guid Guid, UserDto User);
 }

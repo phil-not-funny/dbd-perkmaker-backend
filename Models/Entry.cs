@@ -2,10 +2,11 @@
 {
     public class Entry
     {
-        public Entry(string header, EntryType type)
+        public Entry(string header, EntryType type, User user)
         {
             Header = header;
             Type = type;
+            User = user;
         }
         protected Entry() { }
 
@@ -17,7 +18,7 @@
         public Guid Guid { get; set; }
         public EntryType Type { get; set; }
         public string Header { get; set; }
-
+        public User User { get; set; }
 
     }
 }

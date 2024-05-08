@@ -1,6 +1,6 @@
-@perkamker_backend_HostAddress = http://localhost:5165
+@perkmaker_backend_HostAddress = http://localhost:5165
 
-GET {{perkamker_backend_HostAddress}}/weatherforecast/
+GET {{perkmaker_backend_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###

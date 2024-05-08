@@ -1,12 +1,14 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using perkmaker_backend;
+using perkmaker_backend.Dtos;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddDbContext<PerkmakerContext>(opt =>
     opt.UseSqlite("DataSource=Perkmaker.db"));
 builder.Services.AddCors(options =>

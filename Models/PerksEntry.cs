@@ -3,7 +3,7 @@
     public class PerksEntry: Entry
     {
         protected PerksEntry() { }
-        public PerksEntry(string header, List<Perk> perks): base(header, EntryType.Perks)
+        public PerksEntry(string header, List<Perk> perks, User user) : base(header, EntryType.Perks, user)
         {
             Perks = perks;
         }

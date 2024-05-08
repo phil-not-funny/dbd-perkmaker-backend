@@ -2,7 +2,7 @@
 {
     public class SurvivorEntry: Entry
     {
-        public SurvivorEntry(string header, Survivor survivor): base(header, EntryType.Survivor)
+        public SurvivorEntry(string header, Survivor survivor, User user) : base(header, EntryType.Survivor, user)
         {
             Survivor = survivor;
         }

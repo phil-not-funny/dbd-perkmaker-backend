@@ -2,7 +2,7 @@
 {
     public class KillerEntry: Entry
     {
-        public KillerEntry(string header, Killer killer): base(header, EntryType.Killer)
+        public KillerEntry(string header, Killer killer, User user) : base(header, EntryType.Killer, user)
         {
             Killer = killer;
         }
